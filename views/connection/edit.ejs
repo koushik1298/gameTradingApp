@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trading Website</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <main class="container my-5">
+        <div class="create">
+            <h1> edit</h1>
+            <br/>
+            <form method="POST" action="/tradeRoutes/<%=trade.id%>?_method=PUT">
+              
+              <label for="title">Title:</label>
+              <input type="text" id="title" name="title" value="<%= trade.title%>" placeholder="Title of your game" required>
+              <br/>
+              <label for="director">Directed by:</label>
+              <input type="text" id="director" name="director" value="<%= trade.director%>" placeholder="Director" required>
+              <br/>
+              <label for="host">Host by:</label>
+              <input type="text" id="host" name="host_name" value="<%= trade.host_name%>" placeholder="Host By" required>
+              <br/><label for="host">Status</label>
+              <input type="text" id="status" name="status" value="<%= trade.status%>" placeholder="status" readonly>
+              <br/>
+              <label for="details">Details:</label>
+              <input type="text" id="details" name="details" value="<%= trade.details%>" placeholder="Say about the game">
+              <br/>
+              <label for="sdate">Start Date:</label>
+              <input type="text" id="sdate" name="start_date" value="<%= trade.start_date%>" placeholder="Ener in (mm/dd/yyyy) format" required>
+              <br/><br/>
+                    <input type="submit" value="Submit"> 
+            </form>
+          </div>
+    </main>
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

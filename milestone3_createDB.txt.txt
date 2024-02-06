@@ -1,0 +1,69 @@
+mongosh
+show databases;
+use nbadproject; //creating new db for application.
+db.createCollection('trades'); //creating collection to store items.
+
+db.trades.insertMany([
+  {
+    category: "PS4 Games",	
+    title: "The Last of Us Part II",
+    details: "The Last of Us Part II is a 2020 action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment for the PlayStation 4. Set five years after The Last of Us (2013), the game focuses on two playable characters in a post-apocalyptic United States whose lives intertwine: Ellie, who sets out in revenge for a murder, and Abby, a soldier who becomes involved in a conflict between her militia and a religious cult. The game uses a third-person perspective; the player must fight human enemies and cannibalistic zombie-like creatures with firearms, improvised weapons, and stealth",
+    director: "Neil Druckmann",
+    start_date: "january 28,2023",
+    host_name: "john",
+    image: "https://image.api.playstation.com/vulcan/img/rnd/202010/2618/w48z6bzefZPrRcJHc7L8SO66.png"
+  },
+  {
+    category: "PS4 Games",
+    title: "Spider-Man: PS4",
+    details: "Spider-Man is an action-adventure video game developed by Insomniac Games and published by Sony Interactive Entertainment. It was released in September 2018 exclusively for the PlayStation 4 console. The game is based on the Marvel Comics character Spider-Man and follows the story of Peter Parker as he fights crime and saves New York City from various villains",
+    director: "Ryan Smith",
+    start_date: "january 21,2023",
+    host_name: "jones",
+    image: "https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png"
+  },
+  {
+    category: "PS4 Games",
+    title: "Assassin's Creed: Origins",
+    details: "Assassin's Creed: Origins is an action-adventure video game developed and published by Ubisoft. It was released in October 2017 and is the tenth major installment in the Assassin's Creed series. The game is set in ancient Egypt during the Ptolemaic period and follows the story of Bayek, a Medjay, as he investigates a conspiracy against the pharaoh",
+    director: "Jean Guesdon",
+    start_date: "january 17,2023",
+    host_name: "william",
+    image: "https://image.api.playstation.com/cdn/UP0001/CUSA05855_00/yYiGRi9oya2bnKV9QnZ65ghdgBTVWQfI.png"
+  },
+  {
+    category: "PS5 Games",
+    title: "Spider-Man: Miles Morales",
+    details: "Spider-Man: Miles Morales is an action-adventure video game developed by Insomniac Games and published by Sony Interactive Entertainment. It was released in November 2020 for the PlayStation 4 and PlayStation 5 consoles. The game is a standalone sequel to the 2018 game Spider-Man, and follows the story of Miles Morales as he takes on the mantle of Spider-Man in a new adventure set in New York City",
+    director: "Brian Horton",
+    start_date: "january 20,2023",
+    host_name: "kevin",
+    image: "https://image.api.playstation.com/vulcan/ap/rnd/202008/1020/PRfYtTZQsuj3ALrBXGL8MjAH.jpg"
+  },
+  {
+    category: "PS5 Games",
+    title: "Demon's Souls",
+    details: "Demon's Souls is a remake of the 2009 action role-playing game developed by FromSoftware for the PlayStation 3. The remake was developed by Bluepoint Games and was released in November 2020 exclusively for the PlayStation 5 console. It is an updated version of the original game, with improved graphics and performance, new gameplay mechanics, and additional content",
+	director:'Hidetaka Miyazaki',
+        start_date: 'january 10,2023',
+         host_name:'sara',
+         image: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/81QoNRp5+WL.jpg'
+},
+{
+category: "PS5 Games" ,
+	        id: 'id6',
+	         title: "Hogwarts Legacy",
+         details: "Hogwarts Legacy is an upcoming action role-playing video game developed by Avalanche Software and published by Warner Bros. Interactive Entertainment. It is set in the Wizarding World of Harry Potter and is based on the Hogwarts School of Witchcraft and Wizardry. The game is scheduled to be released in 2022 for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.",
+         director:'Alan Tew',
+         start_date: 'january 1,2023',
+         host_name:'jake',
+         image: 'https://image.api.playstation.com/vulcan/ap/rnd/202011/0919/cDHU28ds7cCvKAnVQo719gs0.png'
+}
+]);
+   
+
+db.trades.deleteMany({}); // to drop the data from the collection 
+
+db.trades.drop(); // to drop the collection. 
+
+

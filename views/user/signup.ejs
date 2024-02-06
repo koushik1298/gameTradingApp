@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trading Website</title>
+    <link rel="stylesheet" type = "text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+
+    <main class="container my-5">
+        <div class="container my-5">
+            <h2 class="text-center mb-5">Signup Page</h2>
+            <form action="/users/signup_1" method="POST">
+              <div class="form-group">
+                <label for="firstName">FirstName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  name = "firstName"
+                  placeholder="Enter username"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastName">LastName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter username"
+                />
+              </div>
+              <div class="form-group">
+                <label for="emailInput">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  aria-label="emailHelp"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="passwordInput">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordInput"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirmPasswordInput">Confirm Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Confirm Password"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <br>
+    </main>
+
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

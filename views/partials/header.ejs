@@ -1,0 +1,23 @@
+<header class="p-3">
+    <a href="/">
+    <img src="/images/Logo.jpg" alt = "logo">
+    </a>      
+    <nav class="auth_nav">
+      <% if(!user){ %>
+    <a class="nav-link" href="/users/signup">Sign Up</a>
+    <a class="nav-link" href="/users/login">Log in</a>
+    <%}
+    else{ %>
+      <a class="nav-link" href="/tradeRoutes/new">Start Trading!</a>
+      <a class="nav-link" href="/users/profile">  Profile</a>
+      <a class="nav-link" href="/users/logoff">log-out</a>
+      <%}%>
+  </nav>
+  <hr style="border-bottom: 1px solid #000;">
+  <nav class = "main_nav">
+    <a class="nav_link" href="/">Home</a>
+    <a class="nav_link" href="/about">About</a>
+    <a class="nav_link" href="/tradeRoutes">Trades</a>
+
+  </nav>
+</header>

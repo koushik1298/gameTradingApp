@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>Error page</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" type = "text/css" href="/css/style.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs')%>
+    <main class="container my-5">
+        <div class="container my-5">
+    <div>
+        <h3><%= error.status%> Error</h3> 
+        <p><%= error.message%></p>
+    </div>
+        </div>
+        </main>
+    <%- include('./partials/footer.ejs')%>
+</body>
+</html>
+

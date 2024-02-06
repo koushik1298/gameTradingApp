@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trading Website</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <% if(errorMessages.length > 0) {%>
+      <% errorMessages.forEach(message=>{%>
+          <div class='error'>
+              <%=message%>
+          </div>
+          <%});%>
+              <%}%>
+  
+                  <% if(successMessages.length > 0) {%>
+  
+                      <% successMessages.forEach(message=>{%>
+                          <div class='success'>
+                              <%=message%>
+                          </div>
+                          <%});%>
+                              <%}%>
+
+   <main class="container my-5">
+    <h3>Trade Detail:</h3>
+    <h3><%= trade.title%></h3><br/>
+    <br>
+    <img src="<%= trade.image%>" class="trade_img" alt="Trade Image">
+    <br>
+    <h4>Director: </h4><p></p><%= trade.director%><br>
+    <h4>Details:</h4>
+    <p>
+        <%= trade.details%>
+    </p>
+    <h4>Host_Name:</h4>
+    <p><%= trade.host_name%>
+    </p><h4>status:</h4>
+    <p><%= trade.status%>
+    </p>
+    <h4>Date:</h4>
+    <p>
+        <%= trade.start_date%>
+    </p>
+    <br/>
+    <div id="buttons">
+        <form>
+            <% if (trade.host_id  == user) { %>
+            <button type="submit" formmethod="GET" class = "edit-button" formaction="/tradeRoutes/<%=trade.id%>/edit">Edit</button>
+            <button type="submit" formmethod="POST" class = "delete-button" formaction="/tradeRoutes/<%=trade.id%>?_method=DELETE">Delete</button>
+            <% } %>
+        </form>
+</div>   <br/>
+<div id = "buttons">
+    <form>
+        <% if (trade.host_id  != user) { %>
+        <button type="submit" formmethod="GET" class="trade-button" formaction="/tradeRoutes/trade/<%= trade.id %>">Trade</button>
+        <button type="submit" formmethod="GET" class="watch-button" formaction="/tradeRoutes/watchRoutes/<%= trade.id %>">Watch</button>
+        <% } %>
+        </form>
+</div>
+    
+   </main>
+   <%- include('../partials/footer.ejs')%>
+    
+  </body>
+</html>

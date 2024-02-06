@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trading Website</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <%- include('../partials/header.ejs')%>
+    <% if(errorMessages.length > 0) {%>
+      <% errorMessages.forEach(message=>{%>
+          <div class='error'>
+              <%=message%>
+          </div>
+          <%});%>
+              <%}%>
+  
+                  <% if(successMessages.length > 0) {%>
+  
+                      <% successMessages.forEach(message=>{%>
+                          <div class='success'>
+                              <%=message%>
+                          </div>
+                          <%});%>
+                              <%}%>
+
+    <main class="container my-5">
+        
+        <section id="trades">
+            <h2 class="text-center">Trades</h2>
+            <p class="text-center">Find your next gaming trade here!</p>
+            
+            <!-- Categories -->
+            <div class="row">
+                <div class="card-group">
+                  <h3>PS4 Games: &nbsp;   </h3>
+                  <div class="card-group">
+                    <% trades.forEach(function(trade) { %>
+                        <%if (trade.category === "PS4 Games"){%>
+                    <a href="/tradeRoutes/<%= trade.id %>">
+                      <div class="card">
+                        <img src="<%= trade.image %>" alt="<%= trade.title %>" class="card-img-top">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= trade.title %></h5>
+                        </div>
+                      </div>
+                    </a>
+                    <% } %>
+                    <% }); %>
+                  </div>
+                </div>
+              </div> 
+              <br>
+              <!-- Categories -->
+              <div class ="ps5_games">
+                <div class="row">
+                    <div class="card-group">
+                      <h3>PS5 Games: &nbsp;   </h3>
+                      <div class="card-group">
+                        <% trades.forEach(function(trade) { %>
+                            <%if (trade.category === "PS5 Games"){%>
+                        <a href="/tradeRoutes/<%= trade.id %>">
+                          <div class="card">
+                            <img src="<%= trade.image %>" alt="<%= trade.title %>" class="card-img-top">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= trade.title %></h5>
+                            </div>
+                          </div>
+                        </a>
+                        <% } %>
+                        <%}); %>
+                      </div>
+                    </div>
+                  </div> 
+            <br>
+        </section>
+          
+    </main>
+
+    <%- include('../partials/footer.ejs')%>
+  </body>
+</html>

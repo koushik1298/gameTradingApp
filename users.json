@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "644355f1ac32a92fda9bcb9e"
+  },
+  "firstName": "Kousic Reddy",
+  "lastName": "Thimmareddy",
+  "email": "koushikreddy787@gmail.com",
+  "password": "$2b$10$gbpmMa2UjUHMiR4UBSaWZep80M4eDGOTBT15ODEq0vau2sdVG.xVq",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64435c0fc589bd961e7a187c"
+  },
+  "firstName": "Kousic Reddy",
+  "lastName": "Thimmareddy",
+  "email": "kousic@gmail.com",
+  "password": "$2b$10$bo4VD6Gra3GctVXK1ejylued11/32Q9vDk6uwGPQEo06SJJ4ogyOS",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "644361e08519fc63d3f2dbce"
+  },
+  "firstName": "Kousic Reddy",
+  "lastName": "Thimmareddy",
+  "email": "shashanak@gmail.com",
+  "password": "$2b$10$2GPFLxNuHyhJfnNwv4.pie8qZPxOYAHX9r/t9vaBpBpNuagqw3Zcy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64442c514ab7d6014ee2799d"
+  },
+  "firstName": "fdsfsaf",
+  "lastName": "fdsafasdf",
+  "email": "fsdafdsa@gmail.com",
+  "password": "$2b$10$prpNb3xJQUlhE9jc6N5E7urr4OA6nUfIS04GM.2gcXsqlyjqw277e",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64449cf25a2598e587ec50b2"
+  },
+  "firstName": "John",
+  "lastName": "JAMES ",
+  "email": "johnjames@gmail.com",
+  "password": "$2b$10$9PW/As65W.lWQ8oSTt1UTemK/Foy/rqOjn8s2qqDWKSUfJv42Tp2C",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6444a199dbe56a75ca9b602a"
+  },
+  "firstName": "kousic reddy ",
+  "lastName": "thimmareddy",
+  "email": "kthimma@gmail.com",
+  "password": "$2b$10$pJa12dwMMDtKd/XALY5lCu32kxtBoci5HZSiaaSAZeQEw7idJ5hDu",
+  "__v": 0,
+  "watchedTrades": [
+    {
+      "$oid": "64290ada9c54fcae3014a7ec"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "644857946eaa0c3a8de7dd97"
+  },
+  "firstName": "fdsafasd",
+  "lastName": "fdsafasd",
+  "email": "fdsfsadffdsaa@gmail.com",
+  "password": "$2b$10$0sTD.VszIr3rlAPWFWK6ZOOcIZCAi399JfsG00zYFRMmTTkhqrRjy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645c4ada7740762f6fee96f8"
+  },
+  "firstName": "testuser",
+  "lastName": "fasd",
+  "email": "kthimmarr@gmail.com",
+  "password": "$2b$10$zDXAbenfOIRxY8ZPwadwOuQRSlEVzBEbsL9./yNlibtiN37WsaNQ.",
+  "watchedTrades": [],
+  "__v": 0
+}]

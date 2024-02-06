@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trading Website</title>
+    <link rel="stylesheet" type = "text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+<%- include('../partials/header.ejs')%>
+<br/>
+
+<h2 class="welcome-message">Welcome <%= user.firstName + " " + user.lastName%>. Below are your trade details</h2>
+
+<% if(hostTrades.length) { %>
+  <table class="tradetable">
+    <thead>
+      <tr>
+        <th>Activities</th>
+        <th>Category</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% hostTrades.forEach(story => { %>
+        <tr> 
+          <td><a href='/tradeRoutes/<%= story.id %>'><%= story.title %></a></td>  
+          <td><%= story.category %></td>
+          <td>
+            <form>
+              <button class="edit-button" type="submit" formmethod="GET" formaction="/tradeRoutes/<%=story.id%>/edit">Edit</button>
+              <button class="delete-button" type="submit" formmethod="POST" formaction="/tradeRoutes/<%=story.id%>?_method=DELETE">Delete</button>
+              <% if(story.initiated || story.offered){ %>
+                <button type="submit" formmethod="POST" formaction="/tradeRoutes/manageoffer/<%=story.id%>">Manage Offer</button>
+            <% } %>
+            </form> 
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p class="no-error-message">You have not created any trades yet!</p>
+<% } %>
+<h2>Watched Trades</h2>
+<ul>
+  <% watchedTrades.forEach(trade => { %>
+    <li><a href="/tradeRoutes/<%= trade.id %>"><%= trade.title %></a></li>
+    <form>
+      <button class="delete-button" type="submit" formmethod="GET" formaction="/tradeRoutes/removeWatch/<%=trade.id%>">remove-watch</button>
+    </form>
+    <% }); %>
+  
+</ul>
+<% if(offers.length) { %>
+  <p>Your offers</p>
+  <table>
+      <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th> - </th>
+      </tr>
+  <% offers.forEach (offer => { %>
+      <tr>
+          <td><a href="/trades/<%=offer.offer_to%>"><%= offer.title %></a></td>
+          <td><%= offer.category %></td>
+          <td>Offer Pending</td>
+          <td>
+              <form>
+                  <button type="submit" formmethod="POST" formaction="/tradeRoutes/canceloffer/<%=offer.offer_to%>">Cancel Offer</button>
+              </form>
+          </td>
+      </tr>
+  <% }); %>
+  </table>
+<% } %>
+
+
+  
+<%- include('../partials/footer.ejs')%>
+  </body>
+  </html>

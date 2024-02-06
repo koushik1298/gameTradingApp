@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Trading Website</title>
+    <link rel="stylesheet" type = "text/css" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+<%- include('../partials/header.ejs')%>
+<form action="/tradeRoutes/trade/offer/<%=id%>" method="POST">
+<div class = "profile-info">
+    <h2>Welcome, <%=user.firstName%></h2>
+    <% if(trades.length) { %>
+        <p>Your trades</p>
+        <table>
+            <tr>
+                <th>-</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Image</th>
+            </tr>
+        <% trades.forEach (trade => { %>
+            <% if(trade.status == 'Available') { %>
+            <tr>
+                <td>
+                    <div class="radio">
+                        <input type="radio" id='regular' name='item' value=<%=trade.id%>>
+                    </div>
+                </td>
+                <td><a href="/trades/<%=trade.id%>"><%= trade.title %></a></td>
+                <td><%= trade.category %></td>
+                <td><%= trade.status %></td>
+                <td><img src="<%= trade.image %>" alt="Trade image" width="70"></td>
+            </tr>
+        <% } }); %>
+        </table>
+        <button type="submit">Trade</button>
+    <% } %>
+</div>
+</form>
+<%- include('../partials/footer.ejs')%>
+  </body>
+</html>
